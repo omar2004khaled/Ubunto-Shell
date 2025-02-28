@@ -1,13 +1,13 @@
 # Simple Shell (Multi-Processing)
 
 
-## 1. Objectives
+## 1. 
 
 1. Familiarity with system calls in Unix environment.
 2. Introduction to processes and multi-processing.
 3. Introduction to signal handling in Unix environment.
 
-## 2. Problem Statement
+## 2. 
 
 It is required to implement a Unix shell program. A shell is simply a program that conveniently allows you to run other programs. Read up on your favorite shell to see what it does.
 
@@ -57,7 +57,7 @@ Your shell must support the following commands:
 |:--:|
 | *Figure 1 Firefox, Calculator and Gedit are child processes to the SimpleShell process** |
 
-## 3. Problem Description
+## 3. 
 
 1. Your command shell should take the user command and its parameter(s), i.e., “ls” and “–l” in this example, and convert them into C strings. (Recall that a C string terminates with a null string, i.e., \0.)
 2. The command shell should create a child process via **fork()**.
@@ -134,69 +134,6 @@ function execute_command()
 * Use a process monitor package to monitor your processes. Provide a screenshot for your shell parent process and some child processes spawned as background processes. Suggested packages: KSysguard or Gnome-System-Monitor.
 * Reading [this article about waitpid(pid_t pid, int *statusPtr, int options)](https://support.sas.com/documentation/onlinedoc/sasc/doc/lr2/waitpid.htm) is a must.
 
-## 4. Deliverables
-
-* Complete C source code, commented thoroughly and clearly.
-
-## Test Case
-
-**Open** your shell.
-
-**Execute** the following commands.
-
-```Shell
-ls
-mkdir test
-ls
-ls -a -l -h
-export x="-a -l -h"
-ls $x
-```
-
-**Execute** the following commands in the same session, but **show** that shell is stuck and cannot execute other commands while firefox is open.
-
-**Note:** In order for this test to work correctly, firefox has to be closed before executing this command. Also, if firefox is not available, you may use 'gedit' instead.
-
-```Shell
-firefox
-```
-
-**Close** the firefox.
-
-**Open** the log file, show us its content, then close it.
-
-**Execute** the following commands in the same session, but **show** that shell is not stuck and can execute other commands while firefox is open.
-
-```Shell
-firefox &
-```
-
-**Open** the log file, show us its content, then close it.
-
-**Open** the system monitor and expand all running processes under your shell process.
-
-**Open** the system monitor and **Search** for all firefox processes.
-
-**Execute** the following command in the same session, it should show us an error message.
-
-```Shell
-heyy
-```
-
-**Execute** the following command in the same session, it should close the shell from the first time you execute it.
-
-```Shell
-exit
-```
-
-That's it!
-
-## Lab requirements
-
-* Students will be working individually.
-* You can only use C programming language.
-* Use Ubuntu operating system for development.
-* Submit your code to the online tester.
 
 ## Readings & Resources
 
